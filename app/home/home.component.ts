@@ -1,24 +1,37 @@
-import { Component } from '@angular/core';
+import { ItemEventData } from "tns-core-modules/ui/list-view"
+import { Component, OnInit } from "@angular/core";
+import { AppService } from "../app.service";
+import { Observable } from 'rxjs';
+import { RouterExtensions } from "nativescript-angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  moduleId: module.id,
+    selector: "Home",
+    moduleId: module.id,
+    templateUrl: "./home.component.html",
+    styleUrls: ["./home.component.css"]
 })
-export class HomeComponent {
-  title = 'HelloWorld';
-  private counter = 42;
+export class HomeComponent implements OnInit {
+    onButtonTap(): void {
+        console.log("Button was pressed");
+    }
 
-  constructor() { }
+    listPicker: Array<string> = ["English", "Spanish"];
+    selectedListPickerIndex: number = 0;
 
-  public getMessage() {
-    return this.counter > 0 ?
-      `${this.counter} taps left` :
-      'Hoorraaay! You unlocked the NativeScript clicker achievement!';
-  }
 
-  public onTap() {
-    this.counter--;
-  }
+    constructor(
+        private appService: AppService,
+        private router: RouterExtensions,
+        private activeRoute: ActivatedRoute
+    ) { }
+
+    ngOnInit(): void {
+
+    }
+
+    setIndex() {
+        this.appService.language = this.listPicker[this.selectedListPickerIndex];
+    }
+
 }

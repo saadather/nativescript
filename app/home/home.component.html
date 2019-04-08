@@ -1,6 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<StackLayout class="p-20">
-  <Label text="Tap the button" class="h1 text-center"></Label>
-  <Button text="TAP" (tap)="onTap()" class="btn btn-primary btn-active"></Button>
-  <Label [text]="getMessage()" class="h2 text-center" textWrap="true"></Label>
-</StackLayout>
+<ActionBar title="Choose your language" class="action-bar">
+	<ActionItem [nsRouterLink]="['/news']" (tap)="setIndex()" ios.position="right" text="Next"></ActionItem>
+</ActionBar>
+<ListPicker [items]="listPicker" [(ngModel)]="selectedListPickerIndex"></ListPicker>

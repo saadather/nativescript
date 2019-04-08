@@ -1,0 +1,26 @@
+<StackLayout class="main" verticalAlignment="top">
+
+    <GridLayout class="anim-cover" rows="auto" columns="*">
+        <Image row="0" col="0" height="300" stretch="aspectFill" class="card-img"
+            [src]="currentNews.urlToImage"></Image>
+    </GridLayout>
+
+    <Gridlayout rows="auto,*" class="content anim-content" marginTop="15">
+        <GridLayout>
+            <TextView col="1" class="description-text" [text]="currentNews.title" fontWeight="bold"
+                textWrap="true"></TextView>
+        </GridLayout>
+        <StackLayout row="1">
+            <ScrollView>
+                <StackLayout verticalAlignment="top" horizontalAlignment="left">
+                    <Textview editable="false" class="description-value"
+                        textWrap="true" [text]="currentNews.description">
+                    </Textview>
+                    <Textview editable="false"
+                        textWrap="true" [text]="currentNews.content">
+                    </Textview>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </Gridlayout>
+</StackLayout>
