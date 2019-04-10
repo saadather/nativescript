@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params } from '@angular/router';
 import { AppService } from '../app.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: "Detail",
@@ -15,8 +16,18 @@ export class DetailComponent implements OnInit {
 	currentNews;
 	
 	constructor(private route: ActivatedRoute,
-		private appService: AppService
+		private appService: AppService,
+		private translate: TranslateService
 	) {
+		this.translate.setTranslation('en', {
+			title: 'Title',
+			description: 'Description'
+		  });
+	  
+		  this.translate.setTranslation('es', {
+			title: 'Title',
+			description: 'Description'
+		  });
 	}
 
 	ngOnInit() {
@@ -29,4 +40,5 @@ export class DetailComponent implements OnInit {
 		const data = this.appService.news;
 		this.currentNews = data.find(item => id == item.source.id);
 	}
+	
 }

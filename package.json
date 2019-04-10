@@ -3,7 +3,10 @@
   "license": "SEE LICENSE IN <your-license-filename>",
   "version": "0.0.0",
   "nativescript": {
-    "id": "org.nativescript.HelloWorld"
+    "id": "org.nativescript.HelloWorld",
+    "tns-ios": {
+      "version": "5.2.0"
+    }
   },
   "dependencies": {
     "@angular/animations": "~7.2.0",

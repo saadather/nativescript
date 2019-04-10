@@ -28,10 +28,10 @@ export class NewsComponent implements OnInit {
 
 	getUrl() {
 		if (this.appService.language === "English") {
-			return "http://demo4918783.mockable.io/en";
+			return "https://demo4918783.mockable.io/en";
 		}
 
-		return "http://demo4547015.mockable.io/es";
+		return "https://demo4547015.mockable.io/es";
 	}
 
 	getData() {

@@ -4,6 +4,7 @@ import { AppService } from "../app.service";
 import { Observable } from 'rxjs';
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute } from "@angular/router";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: "Home",
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit {
     constructor(
         private appService: AppService,
         private router: RouterExtensions,
-        private activeRoute: ActivatedRoute
+        private activeRoute: ActivatedRoute,
+        private translate: TranslateService
     ) { }
 
     ngOnInit(): void {
@@ -32,6 +34,7 @@ export class HomeComponent implements OnInit {
 
     setIndex() {
         this.appService.language = this.listPicker[this.selectedListPickerIndex];
+        this.translate.setDefaultLang(this.listPicker[this.selectedListPickerIndex]);
     }
 
 }
