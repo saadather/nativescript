@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute } from "@angular/router";
 import { TranslateService } from '@ngx-translate/core';
+import { SnackBar } from "nativescript-snackbar";
+
+
 
 const LANGUAGE_MAPPER = {
     English: 'en',
@@ -38,8 +41,13 @@ export class HomeComponent implements OnInit {
     }
 
     setIndex() {
+        const snackbar = new SnackBar();
+
         this.appService.language = this.listPicker[this.selectedListPickerIndex];
         this.translate.setDefaultLang(LANGUAGE_MAPPER[this.listPicker[this.selectedListPickerIndex]]);
+        this.translate.get('LANG_UPDATED').subscribe(val => {
+            snackbar.simple(val, 'red', '#067ab4', 3, false);
+        });
     }
 
 }
