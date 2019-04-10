@@ -16,18 +16,8 @@ export class DetailComponent implements OnInit {
 	currentNews;
 	
 	constructor(private route: ActivatedRoute,
-		private appService: AppService,
-		private translate: TranslateService
+		private appService: AppService
 	) {
-		this.translate.setTranslation('en', {
-			title: 'Title',
-			description: 'Description'
-		  });
-	  
-		  this.translate.setTranslation('es', {
-			title: 'Title',
-			description: 'Description'
-		  });
 	}
 
 	ngOnInit() {

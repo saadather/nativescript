@@ -4,7 +4,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AppService } from "./app.service";
-import { TranslateModule } from "@ngx-translate/core";
+import { TranslateModule, TranslatePipe } from "@ngx-translate/core";
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from "./news/news.component";
 import { DetailComponent } from "./detail/detail.component";

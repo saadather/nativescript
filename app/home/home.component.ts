@@ -6,6 +6,11 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute } from "@angular/router";
 import { TranslateService } from '@ngx-translate/core';
 
+const LANGUAGE_MAPPER = {
+    English: 'en',
+    Spanish: 'es'
+}
+
 @Component({
     selector: "Home",
     moduleId: module.id,
@@ -34,7 +39,7 @@ export class HomeComponent implements OnInit {
 
     setIndex() {
         this.appService.language = this.listPicker[this.selectedListPickerIndex];
-        this.translate.setDefaultLang(this.listPicker[this.selectedListPickerIndex]);
+        this.translate.setDefaultLang(LANGUAGE_MAPPER[this.listPicker[this.selectedListPickerIndex]]);
     }
 
 }
