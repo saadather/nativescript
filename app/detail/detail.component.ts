@@ -13,7 +13,7 @@ export class DetailComponent implements OnInit {
     textFieldValue: string = "";
 
 	currentNewsId;
-	currentNews;
+	currentNews = {};
 	
 	constructor(private route: ActivatedRoute,
 		private appService: AppService
@@ -27,6 +27,7 @@ export class DetailComponent implements OnInit {
 	}
 
 	getNews(id) {
+		console.log('data', this.appService.news);
 		const data = this.appService.news;
 		this.currentNews = data.find(item => id == item.source.id);
 	}

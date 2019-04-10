@@ -2,9 +2,9 @@
 
     <Image row="0" col="0" height="300" stretch="aspectFill" class="card-img" [src]="currentNews.urlToImage"></Image>
 
-    <Label col="1" class="tile" [text]="'title' | translate" fontWeight="bold" textWrap="true"></Label>
+    <Label col="1" class="tile" [text]="'TITLE' | translate" fontWeight="bold" textWrap="true"></Label>
     <Label col="1" class="description-text" [text]="currentNews.title" textWrap="true"></Label>
-    <Label editable="false" textWrap="true" [text]="'description' | translate" fontWeight="bold">
+    <Label editable="false" textWrap="true" [text]="'DESC' | translate" fontWeight="bold">
     </Label>
     <Label editable="false" class="description-value" textWrap="true" [text]="currentNews.description">
     </Label>

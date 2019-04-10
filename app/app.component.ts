@@ -8,19 +8,21 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   constructor(translate: TranslateService) {
     translate.setTranslation('en', {
-      title: 'Title',
-      description: 'Description',
-      language: 'Choose your language',
-      news: 'News',
-      next: 'Next'
+      TITLE: 'Title',
+      DESC: 'Description',
+      CHOOSE_LANG: 'Choose your language',
+      NEWS: 'News',
+      NEXT: 'Next',
+      LANG_UPDATED: 'Language Updated'
     });
 
     translate.setTranslation('es', {
-      title: 'Título',
-      description: 'Descripción',
-      language: 'Elige tu idioma',
-      news: 'Noticias',
-      next: 'Siguiente'
+      TITLE: 'Título',
+      DESC: 'Descripción',
+      CHOOSE_LANG: 'Elige tu idioma',
+      NEWS: 'Noticias',
+      NEXT: 'Siguiente',
+      LANG_UPDATED: 'Idioma actualizado'
     });
 
     translate.setDefaultLang('en');

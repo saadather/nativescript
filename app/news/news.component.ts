@@ -12,7 +12,7 @@ export class NewsComponent implements OnInit {
 
 	selectedListPickerIndex: number = 0;
 
-	private _data;
+	public data;
 
 	constructor(
 		private appService: AppService
@@ -22,29 +22,11 @@ export class NewsComponent implements OnInit {
 		this.getData();
 	}
 
-	onItemTap($event) {
-		this.getData();
-	}
-
-	getUrl() {
-		if (this.appService.language === "English") {
-			return "https://demo4918783.mockable.io/en";
-		}
-
-		return "https://demo4547015.mockable.io/es";
-	}
-
 	getData() {
-		const url = this.getUrl();
-		this.appService.getNews(url)
-			.subscribe((response) => {
-				this.setUsersArray(response);
+		this.appService.getNews()
+			.subscribe((response: any) => {
+				this.data = response.articles;
 			});
-	}
-
-	setUsersArray(data) {
-		this._data = data.articles;
-		this.appService.news = data.articles;
 	}
 }
 
